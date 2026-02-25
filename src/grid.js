@@ -64,6 +64,13 @@ export const gridSizes = {
     tablet: 10,
     computer: 7,
   },
+  // addon sizes
+  fifteenPercent: {
+    // define corresponding css vars in columns.less
+  },
+  twentyPercent: {},
+  sixtyPercent: {},
+  seventyPercent: {},
 };
 
 export const variants = [
@@ -183,5 +190,24 @@ export const variants = [
     },
     common: true,
     title: '40 / 60',
+  },
+  // additional sizes
+  {
+    icon: iconE,
+    defaultData: {
+      gridSize: 12,
+      gridCols: ['twentyPercent', 'sixtyPercent', 'twentyPercent'],
+    },
+    common: true,
+    title: '20 / 60 / 20',
+  },
+  {
+    icon: iconE,
+    defaultData: {
+      gridSize: 12,
+      gridCols: ['fifteenPercent', 'seventyPercent', 'fifteenPercent'],
+    },
+    common: true,
+    title: '15 / 70 / 15',
   },
 ];

@@ -1,7 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import config from '@plone/volto/registry';
-import { Grid } from 'semantic-ui-react';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import { COLUMNSBLOCK } from '@eeacms/volto-columns-block/constants';
 import cx from 'classnames';
@@ -23,22 +22,25 @@ const ColumnsBlockView = (props) => {
 
   return (
     <div className="columns-view" id={customId}>
-      <Grid
+      <div
         columns={gridSize}
         className={
           props.data.reverseWrap ? 'column-grid reverse-wrap' : 'column-grid'
         }
       >
         {columnList.map(([id, column], index) => {
+          const style = getStyle(column.settings || {});
           return (
-            <Grid.Column
+            <div
               key={id}
-              {...(gridSizes[gridCols[index]] || gridCols[index])}
               className={cx(
                 'column-blocks-wrapper',
                 column.settings?.column_class,
               )}
-              {...getStyle(column.settings || {})}
+              style={{
+                ...style.style, verticalAlign: style.verticalAlign,
+                width: `var(--${gridCols[index]})`,
+              }}
             >
               <RenderBlocks
                 {...props}
@@ -46,10 +48,10 @@ const ColumnsBlockView = (props) => {
                 metadata={metadata}
                 content={column}
               />
-            </Grid.Column>
+            </div>
           );
         })}
-      </Grid>
+      </div>
     </div>
   );
 };

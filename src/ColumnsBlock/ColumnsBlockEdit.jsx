@@ -390,16 +390,17 @@ class ColumnsBlockEdit extends React.Component {
                 />
               )}
             </div>
-            <Grid columns={gridSize} className="column-grid" stackable>
-              {columnList.map(([colId, column], index) => (
-                <Grid.Column
+            <div columns={gridSize} className="column-grid">
+              {columnList.map(([colId, column], index) => {
+              const style = getStyle(data?.data?.blocks?.[colId]?.settings || {});
+              return (
+                <div
                   className={cx(
                     'block-column',
                     data?.data?.blocks?.[colId]?.settings?.column_class,
                   )}
                   key={colId}
-                  {...(gridSizes[gridCols[index]] || gridCols[index])}
-                  {...getStyle(data?.data?.blocks?.[colId]?.settings || {})}
+                  style={style.style}
                 >
                   <BlocksForm
                     errors={this.props.errors}
@@ -460,9 +461,9 @@ class ColumnsBlockEdit extends React.Component {
                     }
                     pathname={pathname}
                   />
-                </Grid.Column>
-              ))}
-            </Grid>
+                </div>
+              )})}
+            </div>
           </>
         )}
 
