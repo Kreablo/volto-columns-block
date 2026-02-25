@@ -30,6 +30,7 @@ const ColumnsBlockView = (props) => {
         }
       >
         {columnList.map(([id, column], index) => {
+          const style = getStyle(column.settings || {});
           return (
             <Grid.Column
               key={id}
@@ -38,7 +39,10 @@ const ColumnsBlockView = (props) => {
                 'column-blocks-wrapper',
                 column.settings?.column_class,
               )}
-              {...getStyle(column.settings || {})}
+              style={{
+                ...style.style, verticalAlign: style.verticalAlign,
+                width: `var(--${gridCols[index]})`,
+              }}
             >
               <RenderBlocks
                 {...props}

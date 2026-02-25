@@ -70,8 +70,7 @@
     "lint:fix": "make lint-fix",
     "i18n": "make i18n",
     "cypress:run": "make cypress-run",
-    "cypress:open": "make cypress-open",
-    "prepare": "husky install"
+    "cypress:open": "make cypress-open"
   },
   "jest": {
     "enableSymlinks": true
