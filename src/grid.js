@@ -210,4 +210,40 @@ export const variants = [
     common: true,
     title: '15 / 70 / 15',
   },
+  {
+    icon: iconG,
+    defaultData: {
+      gridSize: 12,
+      gridCols: ['customA'],
+    },
+    common: true,
+    title: 'A',
+  },
+  {
+    icon: iconA,
+    defaultData: {
+      gridSize: 12,
+      gridCols: ['customA', 'customB'],
+    },
+    common: true,
+    title: 'A / B',
+  },
+  {
+    icon: iconE,
+    defaultData: {
+      gridSize: 12,
+      gridCols: ['customA', 'customB', 'customC'],
+    },
+    common: true,
+    title: 'A / B / C',
+  },
+  {
+    icon: iconE,
+    defaultData: {
+      gridSize: 12,
+      gridCols: ['customA', 'customB', 'customC', 'customD'],
+    },
+    common: true,
+    title: 'A / B / C / D',
+  },
 ];
