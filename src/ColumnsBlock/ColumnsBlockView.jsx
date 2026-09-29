@@ -29,18 +29,16 @@ const ColumnsBlockView = (props) => {
         }
       >
         {columnList.map(([id, column], index) => {
-          const style = getStyle(column.settings || {});
+          const [style, extraClasses] = getStyle({settings: column.settings || {}, columnType: gridCols[index], data: props.data});
           return (
             <div
               key={id}
               className={cx(
                 'column-blocks-wrapper',
                 column.settings?.column_class,
+                extraClasses,
               )}
-              style={{
-                ...style.style, verticalAlign: style.verticalAlign,
-                width: `var(--${gridCols[index]})`,
-              }}
+              style={style.style}
             >
               <RenderBlocks
                 {...props}

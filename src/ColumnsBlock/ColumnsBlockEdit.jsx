@@ -264,14 +264,15 @@ class ColumnsBlockEdit extends React.Component {
 
   getColumnsBlockSchema = () => {
     const variants = config.blocks.blocksConfig?.[COLUMNSBLOCK]?.variants || [];
+    const { data } = this.props;
     const schema = ColumnsBlockSchema({
       intl: this.props.intl,
       formData: {
         activeColumn: this.state.activeColumn,
         setActiveColumn: (colId) => this.setState({ activeColumn: colId }),
       },
+      data: data,
     });
-    const { data } = this.props;
     const { blocks_layout = {} } = data.data || {};
     const nrOfColumns = (blocks_layout?.items || []).length;
     const available_variants = variants.filter(
@@ -392,12 +393,17 @@ class ColumnsBlockEdit extends React.Component {
             </div>
             <div columns={gridSize} className="column-grid">
               {columnList.map(([colId, column], index) => {
-              const style = getStyle(data?.data?.blocks?.[colId]?.settings || {});
+                const [style, extraClasses] = getStyle({
+                  settings: data?.data?.blocks?.[colId]?.settings || {},
+                  columnType: gridCols[index],
+                  data: data,
+                });
               return (
                 <div
                   className={cx(
                     'block-column',
                     data?.data?.blocks?.[colId]?.settings?.column_class,
+                    extraClasses,
                   )}
                   key={colId}
                   style={style.style}

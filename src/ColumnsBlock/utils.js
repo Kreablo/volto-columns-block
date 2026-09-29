@@ -47,3 +47,7 @@ export const defaultNewColumn = () => {
     },
   };
 };
+
+export const isCustomLayout = (data) => {
+  return data?.gridCols?.some((columnLayout) => columnLayout.startsWith('custom'));
+};

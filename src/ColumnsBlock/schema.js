@@ -1,4 +1,5 @@
 import { defineMessages } from 'react-intl';
+import { isCustomLayout } from './utils';
 
 const messages = defineMessages({
   labelColumn: {
@@ -41,6 +42,34 @@ const messages = defineMessages({
     id: 'reverseWrapDescription',
     defaultMessage: 'Reverse column order when opening site on mobile.',
   },
+  labelCustomA: {
+    defaultMessage: 'Width A',
+    id: 'columns-width-a-label',
+  },
+  labelCustomB: {
+    defaultMessage: 'Width B',
+    id: 'columns-width-b-label',
+  },
+  labelCustomC: {
+    defaultMessage: 'Width C',
+    id: 'columns-width-c-label',
+  },
+  labelCustomD: {
+    defaultMessage: 'Width D',
+    id: 'columns-width-d-label',
+  },
+  labelCenterInMobile: {
+    defaultMessage: 'Center in mobile view',
+    id: 'columns-center-in-mobile-label',
+  },
+  descriptionCenterInMobile: {
+    defaultMessage: 'Applies to columns with set width',
+    id: 'columns-center-in-mobile-description',
+  },
+  labelAutomaticWidth: {
+    defaultMessage: 'Automatic',
+    id: 'columns-automatic-label',
+  },
 });
 
 export const ColumnSchema = (intl) => ({
@@ -60,37 +89,67 @@ export const ColumnSchema = (intl) => ({
   required: [],
 });
 
-export const ColumnsBlockSchema = ({ intl, formData }) => ({
-  title: intl.formatMessage(messages.labelColumnsBlock),
-  fieldsets: [
-    {
-      id: 'default',
-      title: intl.formatMessage(messages.labelDefault),
-      fields: ['title', 'data', 'gridCols', 'reverseWrap'],
+export const ColumnsBlockSchema = ({intl, formData, data}) => {
+  const isCustom = isCustomLayout(data);
+  const customFields = isCustom ? [...data.gridCols, 'centerInMobile'] : [];
+  
+  return {
+    title: intl.formatMessage(messages.labelColumnsBlock),
+    fieldsets: [
+      {
+        id: 'default',
+        title: intl.formatMessage(messages.labelDefault),
+        fields: ['title', 'data', 'gridCols', ...customFields, 'reverseWrap'],
+      },
+    ],
+    properties: {
+      title: {
+        title: intl.formatMessage(messages.labelTitle),
+        description: intl.formatMessage(messages.descrTitle),
+        type: 'string',
+      },
+      data: {
+        title: intl.formatMessage(messages.labelColumns),
+        type: 'columns',
+        schema: ColumnSchema(intl),
+        blockData: formData,
+      },
+      gridCols: {
+        title: intl.formatMessage(messages.labelLayout),
+        widget: 'layout_select',
+        choices: [],
+      },
+      reverseWrap: {
+        title: intl.formatMessage(messages.labelReverseWrap),
+        description: intl.formatMessage(messages.reverseWrapDescription),
+        type: 'boolean',
+      },
+      customA: {
+        title: intl.formatMessage(messages.labelCustomA),
+        type: 'string',
+        placeholder: intl.formatMessage(messages.labelAutomaticWidth),
+      },
+      customB: {
+        title: intl.formatMessage(messages.labelCustomB),
+        type: 'string',
+        placeholder: intl.formatMessage(messages.labelAutomaticWidth),
+      },
+      customC: {
+        title: intl.formatMessage(messages.labelCustomC),
+        type: 'string',
+        placeholder: intl.formatMessage(messages.labelAutomaticWidth),
+      },
+      customD: {
+        title: intl.formatMessage(messages.labelCustomD),
+        type: 'string',
+        placeholder: intl.formatMessage(messages.labelAutomaticWidth),
+      },
+      centerInMobile: {
+        title: intl.formatMessage(messages.labelCenterInMobile),
+        description: intl.formatMessage(messages.descriptionCenterInMobile),
+        type: 'boolean',
+      },
     },
-  ],
-  properties: {
-    title: {
-      title: intl.formatMessage(messages.labelTitle),
-      description: intl.formatMessage(messages.descrTitle),
-      type: 'string',
-    },
-    data: {
-      title: intl.formatMessage(messages.labelColumns),
-      type: 'columns',
-      schema: ColumnSchema(intl),
-      blockData: formData,
-    },
-    gridCols: {
-      title: intl.formatMessage(messages.labelLayout),
-      widget: 'layout_select',
-      choices: [],
-    },
-    reverseWrap: {
-      title: intl.formatMessage(messages.labelReverseWrap),
-      description: intl.formatMessage(messages.reverseWrapDescription),
-      type: 'boolean',
-    },
-  },
-  required: [],
-});
+    required: [],
+  };
+};

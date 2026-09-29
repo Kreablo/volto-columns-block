@@ -12,11 +12,33 @@ const getSides = (v) => {
 };
 
 export function getStyle(props) {
-  return {
-    verticalAlign: props.grid_vertical_align,
+  const { settings, columnType, data } = props;
+  const isCustomStyle = columnType?.startsWith('custom');
+  const size = data?.[columnType];
+  const hasSize = !!size;
+
+  let additionalStyle = {};
+  let styleClass = '';
+
+  if (isCustomStyle) {
+    additionalStyle = {
+      flexBasis: size ?? 'auto',
+      flexGrow: hasSize ? 0 : 1,
+      [`--${columnType}`]: size,
+    };
+    styleClass = [
+      'custom',
+      data.centerInMobile && 'center-mobile',
+    ].filter((id) => id).join(' ');
+  }
+
+  return [{
     style: {
-      backgroundColor: props.backgroundColor,
-      padding: getSides(props.padding),
+      verticalAlign: settings?.grid_vertical_align,
+      backgroundColor: settings?.backgroundColor,
+      padding: getSides(settings?.padding),
+      width: `var(--${columnType})`,
+      ...additionalStyle,
     },
-  };
+  }, styleClass];
 }

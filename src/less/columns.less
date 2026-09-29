@@ -265,26 +265,15 @@
   padding: 0.5em 1em;
 }
 
-
-.somelayout {
-  background-color: green;
-  @media screen and (max-width: @largestTabletScreen) {
-    background-color: red;
-  }
-  @media screen and (max-width: @largestMobileScreen) {
-    background-color: blue;
+@media (max-width: @largestMobileScreen) {
+  .column-grid:has(.custom.column-blocks-wrapper) {
+    .custom.column-blocks-wrapper {
+      width: 100% !important;
+      &.center-mobile {
+        margin-inline: auto;
+      }
+    }
   }
 }
-
-
-// .halfWidthBig {
-//   width: 50%;
-//   @media screen and (max-width: @largestTabletScreen) {
-//     background-color: red;
-//   }
-//   @media screen and (max-width: @largestMobileScreen) {
-//     background-color: blue;
-//   }
-// }
 
 .loadAddonOverrides();
