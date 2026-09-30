@@ -16,11 +16,6 @@ msgstr ""
 msgid "A custom CSS class, aplicable to this column"
 msgstr ""
 
-#. Default: "Add block"
-#: ColumnsBlock/EditBlockWrapper
-msgid "Add block"
-msgstr ""
-
 #. Default: "Advanced"
 #: Styles/schema
 msgid "Advanced"
@@ -86,6 +81,7 @@ msgstr ""
 
 #. Default: "Go to Column settings"
 #: ColumnsBlock/ColumnsBlockEdit
+#: Widgets/ColumnsWidget
 msgid "Go to Column settings"
 msgstr ""
 
@@ -107,11 +103,6 @@ msgstr ""
 #. Default: "Percentage"
 #: Widgets/QuadSize
 msgid "Percentage"
-msgstr ""
-
-#. Default: "Remove block"
-#: ColumnsBlock/EditBlockWrapper
-msgid "Remove block"
 msgstr ""
 
 #. Default: "Reverse wrap"
@@ -154,19 +145,44 @@ msgstr ""
 msgid "Unit"
 msgstr ""
 
-#. Default: "Unknown Block {block}"
-#: ColumnsBlock/EditBlockWrapper
-msgid "Unknown Block"
-msgstr ""
-
 #. Default: "Vertical align"
 #: Styles/schema
 msgid "Vertical align"
 msgstr ""
 
-#. Default: "delete"
-#: ColumnsBlock/EditBlockWrapper
-msgid "delete"
+#. Default: "Automatic"
+#: ColumnsBlock/schema
+msgid "columns-automatic-label"
+msgstr ""
+
+#. Default: "Applies to columns with set width"
+#: ColumnsBlock/schema
+msgid "columns-center-in-mobile-description"
+msgstr ""
+
+#. Default: "Center in mobile view"
+#: ColumnsBlock/schema
+msgid "columns-center-in-mobile-label"
+msgstr ""
+
+#. Default: "Width A"
+#: ColumnsBlock/schema
+msgid "columns-width-a-label"
+msgstr ""
+
+#. Default: "Width B"
+#: ColumnsBlock/schema
+msgid "columns-width-b-label"
+msgstr ""
+
+#. Default: "Width C"
+#: ColumnsBlock/schema
+msgid "columns-width-c-label"
+msgstr ""
+
+#. Default: "Width D"
+#: ColumnsBlock/schema
+msgid "columns-width-d-label"
 msgstr ""
 
 #. Default: "Reverse column order when opening site on mobile."

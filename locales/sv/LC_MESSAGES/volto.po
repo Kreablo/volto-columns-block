@@ -1,0 +1,191 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-09-30 11:43+0200\n"
+"Last-Translator: \n"
+"Language: \n"
+"Language-Team: \n"
+"Content-Type: \n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. Default: "A custom CSS class, aplicable to this column"
+#: Styles/schema
+msgid "A custom CSS class, aplicable to this column"
+msgstr ""
+
+#. Default: "Advanced"
+#: Styles/schema
+msgid "Advanced"
+msgstr ""
+
+#. Default: "Background color"
+#: Styles/schema
+msgid "Background color"
+msgstr ""
+
+#. Default: "Bottom"
+#: Styles/schema
+msgid "Bottom"
+msgstr ""
+
+#. Default: "Column"
+#: ColumnsBlock/ColumnsBlockEdit
+#: ColumnsBlock/schema
+#: Widgets/ColumnsWidget
+msgid "Column"
+msgstr ""
+
+#. Default: "Column title"
+#: ColumnsBlock/schema
+msgid "Column title"
+msgstr ""
+
+#. Default: "Columns"
+#: ColumnsBlock/schema
+msgid "Columns"
+msgstr ""
+
+#. Default: "Columns block"
+#: ColumnsBlock/ColumnsBlockEdit
+#: ColumnsBlock/schema
+msgid "Columns block"
+msgstr ""
+
+#. Default: "Columns block friendly name"
+#: ColumnsBlock/schema
+msgid "Columns block friendly name"
+msgstr ""
+
+#. Default: "Custom CSS class"
+#: Styles/schema
+msgid "Custom CSS class"
+msgstr ""
+
+#. Default: "Customize"
+#: Widgets/QuadSize
+msgid "Customize"
+msgstr ""
+
+#. Default: "Default"
+#: ColumnsBlock/schema
+msgid "Default"
+msgstr ""
+
+#. Default: "Edit parent columns block"
+#: ColumnsBlock/ColumnsBlockEdit
+msgid "Edit parent columns block"
+msgstr ""
+
+#. Default: "Go to Column settings"
+#: ColumnsBlock/ColumnsBlockEdit
+#: Widgets/ColumnsWidget
+msgid "Go to Column settings"
+msgstr ""
+
+#. Default: "Layout"
+#: ColumnsBlock/schema
+msgid "Layout"
+msgstr ""
+
+#. Default: "Middle"
+#: Styles/schema
+msgid "Middle"
+msgstr ""
+
+#. Default: "Padding"
+#: Styles/schema
+msgid "Padding"
+msgstr ""
+
+#. Default: "Percentage"
+#: Widgets/QuadSize
+msgid "Percentage"
+msgstr ""
+
+#. Default: "Reverse wrap"
+#: ColumnsBlock/schema
+msgid "Reverse wrap"
+msgstr ""
+
+#. Default: "Select layout"
+#: ColumnsBlock/ColumnVariations
+msgid "Select layout"
+msgstr ""
+
+#. Default: "Size"
+#: Widgets/QuadSize
+msgid "Size"
+msgstr ""
+
+#. Default: "Style"
+#: Styles/schema
+msgid "Style"
+msgstr ""
+
+#. Default: "Styling"
+#: Styles/schema
+msgid "Styling"
+msgstr ""
+
+#. Default: "Title"
+#: ColumnsBlock/schema
+msgid "Title"
+msgstr ""
+
+#. Default: "Top"
+#: Styles/schema
+msgid "Top"
+msgstr ""
+
+#. Default: "Unit"
+#: Widgets/QuadSize
+msgid "Unit"
+msgstr ""
+
+#. Default: "Vertical align"
+#: Styles/schema
+msgid "Vertical align"
+msgstr ""
+
+#. Default: "Automatic"
+#: ColumnsBlock/schema
+msgid "columns-automatic-label"
+msgstr "Automatisk"
+
+#. Default: "Applies to columns with set width"
+#: ColumnsBlock/schema
+msgid "columns-center-in-mobile-description"
+msgstr "Avser kolumner med fast bredd"
+
+#. Default: "Center in mobile view"
+#: ColumnsBlock/schema
+msgid "columns-center-in-mobile-label"
+msgstr "Centrera i mobilvy"
+
+#. Default: "Width A"
+#: ColumnsBlock/schema
+msgid "columns-width-a-label"
+msgstr "Bredd A"
+
+#. Default: "Width B"
+#: ColumnsBlock/schema
+msgid "columns-width-b-label"
+msgstr "Bredd B"
+
+#. Default: "Width C"
+#: ColumnsBlock/schema
+msgid "columns-width-c-label"
+msgstr "Bredd C"
+
+#. Default: "Width D"
+#: ColumnsBlock/schema
+msgid "columns-width-d-label"
+msgstr "Bredd D"
+
+#. Default: "Reverse column order when opening site on mobile."
+#: ColumnsBlock/schema
+msgid "reverseWrapDescription"
+msgstr ""
