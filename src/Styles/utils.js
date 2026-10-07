@@ -28,13 +28,16 @@ export function getStyle(props) {
     };
   }
 
-  return [{
-    style: {
-      verticalAlign: settings?.grid_vertical_align,
-      backgroundColor: settings?.backgroundColor,
-      padding: getSides(settings?.padding),
-      width: `var(--${columnType})`,
-      ...additionalStyle,
+  return [
+    {
+      style: {
+        verticalAlign: settings?.grid_vertical_align,
+        backgroundColor: settings?.backgroundColor,
+        padding: getSides(settings?.padding),
+        width: `var(--${columnType})`,
+        ...additionalStyle,
+      },
     },
-  }, styleClass];
+    styleClass,
+  ];
 }

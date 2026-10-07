@@ -90,7 +90,7 @@ export const ColumnSchema = (intl) => ({
   required: [],
 });
 
-export const ColumnsBlockSchema = ({intl, formData, data}) => {
+export const ColumnsBlockSchema = ({ intl, formData, data }) => {
   const isCustom = isCustomLayout(data);
   const customFields = isCustom
     ? [...data.gridCols, 'wrapType', 'centerInMobile']
