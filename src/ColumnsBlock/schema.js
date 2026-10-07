@@ -1,5 +1,6 @@
 import { defineMessages } from 'react-intl';
 import { isCustomLayout } from './utils';
+import { wrapType } from './wrapType';
 
 const messages = defineMessages({
   labelColumn: {
@@ -91,8 +92,10 @@ export const ColumnSchema = (intl) => ({
 
 export const ColumnsBlockSchema = ({intl, formData, data}) => {
   const isCustom = isCustomLayout(data);
-  const customFields = isCustom ? [...data.gridCols, 'centerInMobile'] : [];
-  
+  const customFields = isCustom
+    ? [...data.gridCols, 'wrapType', 'centerInMobile']
+    : [];
+
   return {
     title: intl.formatMessage(messages.labelColumnsBlock),
     fieldsets: [
@@ -149,6 +152,7 @@ export const ColumnsBlockSchema = ({intl, formData, data}) => {
         description: intl.formatMessage(messages.descriptionCenterInMobile),
         type: 'boolean',
       },
+      wrapType: wrapType(intl),
     },
     required: [],
   };

@@ -265,13 +265,25 @@
   padding: 0.5em 1em;
 }
 
+.columns-view .custom.column-grid {
+  &.wrap-never {
+    flex-flow: nowrap;
+  }
+}
+
+@media (min-width: calc(@largestMobileScreen + 1px)) {
+  .columns-view .custom.column-grid.wrap-mobile {
+    flex-flow: nowrap;
+  }
+}
+
 @media (max-width: @largestMobileScreen) {
-  .column-grid:has(.custom.column-blocks-wrapper) {
-    .custom.column-blocks-wrapper {
+  .custom.column-grid {
+    &.center-mobile .column-blocks-wrapper {
+      margin-inline: auto;
+    }
+    &.wrap-mobile .column-blocks-wrapper {
       width: 100% !important;
-      &.center-mobile {
-        margin-inline: auto;
-      }
     }
   }
 }

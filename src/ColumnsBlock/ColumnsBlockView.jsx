@@ -5,7 +5,7 @@ import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import { COLUMNSBLOCK } from '@eeacms/volto-columns-block/constants';
 import cx from 'classnames';
 
-import { getColumns } from './utils';
+import { getColumns, isCustomLayout } from './utils';
 import { getStyle } from '@eeacms/volto-columns-block/Styles';
 
 const ColumnsBlockView = (props) => {
@@ -24,9 +24,14 @@ const ColumnsBlockView = (props) => {
     <div className="columns-view" id={customId}>
       <div
         columns={gridSize}
-        className={
-          props.data.reverseWrap ? 'column-grid reverse-wrap' : 'column-grid'
-        }
+        className={cx('column-grid', {
+            'reverse-wrap': props.data.reverseWrap,
+            'wrap-never': props.data.wrapType === 'never',
+            'wrap-mobile': props.data.wrapType === 'mobile',
+            'center-mobile': props.data.centerInMobile,
+            'custom': isCustomLayout(props.data),
+          },
+        )}
       >
         {columnList.map(([id, column], index) => {
           const [style, extraClasses] = getStyle({settings: column.settings || {}, columnType: gridCols[index], data: props.data});

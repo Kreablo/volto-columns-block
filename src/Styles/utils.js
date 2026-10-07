@@ -18,7 +18,7 @@ export function getStyle(props) {
   const hasSize = !!size;
 
   let additionalStyle = {};
-  let styleClass = '';
+  const styleClass = '';
 
   if (isCustomStyle) {
     additionalStyle = {
@@ -26,10 +26,6 @@ export function getStyle(props) {
       flexGrow: hasSize ? 0 : 1,
       [`--${columnType}`]: size,
     };
-    styleClass = [
-      'custom',
-      data.centerInMobile && 'center-mobile',
-    ].filter((id) => id).join(' ');
   }
 
   return [{
