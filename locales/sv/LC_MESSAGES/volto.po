@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2026-09-30 11:43+0200\n"
+"PO-Revision-Date: 2026-10-07 17:02+0200\n"
 "Last-Translator: \n"
 "Language: \n"
 "Language-Team: \n"
@@ -184,6 +184,26 @@ msgstr "Bredd C"
 #: ColumnsBlock/schema
 msgid "columns-width-d-label"
 msgstr "Bredd D"
+
+#. Default: "Wrap"
+#: ColumnsBlock/wrapType
+msgid "columns-wrap-type-label"
+msgstr "Bryt kolumner"
+
+#. Default: "Mobile only"
+#: ColumnsBlock/wrapType
+msgid "columns-wrap-type-mobile-label"
+msgstr "Endast mobilvy"
+
+#. Default: "Never"
+#: ColumnsBlock/wrapType
+msgid "columns-wrap-type-never-label"
+msgstr "Aldrig"
+
+#. Default: "Default"
+#: ColumnsBlock/wrapType
+msgid "columns-wrap-type-placeholder"
+msgstr "Standard"
 
 #. Default: "Reverse column order when opening site on mobile."
 #: ColumnsBlock/schema

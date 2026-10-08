@@ -192,6 +192,26 @@ msgstr ""
 msgid "columns-width-d-label"
 msgstr ""
 
+#. Default: "Wrap"
+#: ColumnsBlock/wrapType
+msgid "columns-wrap-type-label"
+msgstr ""
+
+#. Default: "Mobile only"
+#: ColumnsBlock/wrapType
+msgid "columns-wrap-type-mobile-label"
+msgstr ""
+
+#. Default: "Never"
+#: ColumnsBlock/wrapType
+msgid "columns-wrap-type-never-label"
+msgstr ""
+
+#. Default: "Default"
+#: ColumnsBlock/wrapType
+msgid "columns-wrap-type-placeholder"
+msgstr ""
+
 #. Default: "Reverse column order when opening site on mobile."
 #: ColumnsBlock/schema
 msgid "reverseWrapDescription"
